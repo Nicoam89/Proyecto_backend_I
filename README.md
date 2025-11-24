@@ -1,4 +1,4 @@
-# Mi Tienda - API
+# Proyecto Backend I - API
 
 Instalación:
 npm install
