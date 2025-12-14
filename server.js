@@ -1,3 +1,10 @@
+import { httpServer } from './app.js';
+
+const PORT = 8080;
+httpServer.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+
+
+
 const express = require('express');
 const app = express();
 const PORT = 8080;
