@@ -28,3 +28,13 @@ router.get('/realtimeproducts', (req, res) => {
 });
 
 export default router;
+
+
+router.get("/carts/:cid", async (req, res) => {
+  const cart = await CartModel
+    .findById(req.params.cid)
+    .populate("products.product")
+    .lean();
+
+  res.render("cart", { products: cart.products });
+});

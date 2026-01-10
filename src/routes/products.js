@@ -52,3 +52,13 @@ router.delete('/:pid', async (req, res) => {
 });
 
 module.exports = router;
+
+
+router.get("/products", async (req, res) => {
+  const result = await ProductModel.paginate(
+    {},
+    { limit: 10, page: req.query.page || 1, lean: true }
+  );
+
+  res.render("index", result);
+});

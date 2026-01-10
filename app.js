@@ -2,7 +2,7 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import { Server } from 'socket.io';
 import { createServer } from 'http';
-import viewsRouter from './routes/views.router.js';
+import viewsRouter from './src/routes/views.router.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 

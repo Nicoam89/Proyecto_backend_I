@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const CartManager = require('../managers/CartManager');
-const ProductManager = require('../managers/ProductManager');
+const CartManager = require('../../managers/CartManager');
+const ProductManager = require('../../managers/ProductManager');
 
 const cm = new CartManager('data/carts.json');
 const pm = new ProductManager('data/products.json');
