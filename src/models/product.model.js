@@ -1,5 +1,13 @@
+/**
+ * Modelo de Producto
+ * Define el esquema y validaciones para productos en MongoDB
+ */
+
 import mongoose from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
+
+
+// Definición del esquema de producto
 
 const productSchema = new mongoose.Schema({
   title: String,
@@ -9,7 +17,11 @@ const productSchema = new mongoose.Schema({
   status: Boolean
 });
 
+// Plugin para paginación
+
 productSchema.plugin(mongoosePaginate);
+
+// Crear modelo a partir del esquema
 
 const ProductModel = mongoose.model("products", productSchema);
 

@@ -1,3 +1,8 @@
+/**
+ * Configuración de la conexión a MongoDB
+ * Utiliza Mongoose como ODM
+ */
+
 import mongoose from "mongoose";
 
 export const connectMongo = async () => {

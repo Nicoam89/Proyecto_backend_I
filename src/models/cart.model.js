@@ -1,4 +1,11 @@
+/**
+ * Modelo de Carrito
+ * Define el esquema para carritos de compra en MongoDB
+ */
+
 import mongoose from "mongoose";
+
+// Sub-esquema para productos dentro del carrito
 
 const cartSchema = new mongoose.Schema({
   products: [
@@ -14,6 +21,9 @@ const cartSchema = new mongoose.Schema({
     }
   ]
 });
+
+
+// Crear modelo
 
 export const CartModel = mongoose.model(
   "carts",

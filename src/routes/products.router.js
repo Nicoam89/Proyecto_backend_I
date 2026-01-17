@@ -1,5 +1,16 @@
+/**
+ * Rutas para la gestión de productos
+ * Endpoints: GET, POST, PUT, DELETE
+ */
+
 import { Router } from "express";
 import ProductModel from "../models/product.model.js";
+
+/**
+ * GET /api/products
+ * Obtiene todos los productos con paginación
+ * Query params: limit, page, sort, query
+ */
 
 const router = Router();
 

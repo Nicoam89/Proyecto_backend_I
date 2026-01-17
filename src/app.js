@@ -1,5 +1,12 @@
+/**
+ * Configuración principal de la aplicación Express
+ * Define middlewares, rutas y motor de vistas
+ */
+
 import express from "express";
 import handlebars from "express-handlebars";
+
+// Importar routers
 
 import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
@@ -8,15 +15,25 @@ import viewsRouter from "./routes/views.router.js";
 import { connectMongo } from "./config/mongoose.js";
 
 const app = express();
+
 connectMongo();
+// ========== CONFIGURACIÓN DE MIDDLEWARES ==========
+
+// Middleware para parsear JSON en el body de las peticiones
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("src/public"));
 
+// ========== CONFIGURACIÓN DE HANDLEBARS ==========
+
+// Configurar motor de plantillas Handlebars
+
 app.engine("handlebars", handlebars.engine());
 app.set("view engine", "handlebars");
 app.set("views", "src/views");
+
+// ========== RUTAS DE LA API ==========
 
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
