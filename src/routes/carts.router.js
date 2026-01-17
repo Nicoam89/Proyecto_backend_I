@@ -1,3 +1,7 @@
+import { Router } from "express";
+
+const router = Router();
+
 router.get("/:cid", async (req, res) => {
   const { cid } = req.params;
 
@@ -60,3 +64,5 @@ router.delete("/:cid", async (req, res) => {
     message: "Carrito vacío"
   });
 });
+
+export default router;

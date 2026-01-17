@@ -62,3 +62,5 @@ router.get("/products", async (req, res) => {
 
   res.render("index", result);
 });
+
+export default router;

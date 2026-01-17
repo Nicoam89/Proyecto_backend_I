@@ -1,0 +1,25 @@
+import express from "express";
+import handlebars from "express-handlebars";
+
+import productsRouter from "./routes/products.router.js";
+import cartsRouter from "./routes/carts.router.js";
+import viewsRouter from "./routes/views.router.js";
+
+import { connectMongo } from "./config/mongoose.js";
+
+const app = express();
+connectMongo();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("src/public"));
+
+app.engine("handlebars", handlebars.engine());
+app.set("view engine", "handlebars");
+app.set("views", "src/views");
+
+app.use("/api/products", productsRouter);
+app.use("/api/carts", cartsRouter);
+app.use("/", viewsRouter);
+
+export default app;

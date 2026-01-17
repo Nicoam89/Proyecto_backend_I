@@ -21,13 +21,6 @@ router.get('/', (req, res) => {
     res.render('home', { products });
 });
 
-// Real-time view
-router.get('/realtimeproducts', (req, res) => {
-    const products = getProducts();
-    res.render('realTimeProducts', { products });
-});
-
-export default router;
 
 
 router.get("/carts/:cid", async (req, res) => {
@@ -38,3 +31,5 @@ router.get("/carts/:cid", async (req, res) => {
 
   res.render("cart", { products: cart.products });
 });
+
+export default router;
